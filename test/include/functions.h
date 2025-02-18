@@ -1,0 +1,2 @@
+void bye();
+void hello();
