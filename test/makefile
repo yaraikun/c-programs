@@ -34,7 +34,7 @@ $(BIN_DIR):
 	@echo "Creating bin directory..."
 	@mkdir -p "bin"
 
-.PHONY: all clean run
+.PHONY: all clean
 
 clean:
 	@echo "Cleaning up object files..."
