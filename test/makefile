@@ -1,6 +1,6 @@
 CC = gcc
-CFLAGS = -Wall -Wextra -Iinclude
-LFLAGS = -Wall -Wextra
+INC = -Iinclude
+CFLAGS = -Wall -Wextra $(INC)
 
 SRC_DIR = src
 OBJ_DIR = obj
@@ -18,13 +18,13 @@ all: $(BIN)
 	else echo "Skipping run."; \
 	fi
 
-$(BIN): $(OBJ) $(BIN_DIR)
+$(BIN): $(OBJ) | $(BIN_DIR)
 	@echo "Linking..."
-	@$(CC) $(LFLAGS) $(OBJ) -o $(BIN)
+	@$(CC) $^ -o $@
 
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(OBJ_DIR)
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(OBJ_DIR)
 	@echo "Compiling $<..."
-	@$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $^ -o $@
 
 $(OBJ_DIR):
 	@echo "Creating obj directory..."
