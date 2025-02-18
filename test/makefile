@@ -10,6 +10,7 @@ SRC = $(wildcard $(SRC_DIR)/*.c)
 OBJ = $(SRC:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 BIN = $(BIN_DIR)/a.exe
 
+.PHONY: run
 all: $(BIN)
 	@echo -n "Run? (y/n): " && \
 	read answer && \
@@ -34,8 +35,7 @@ $(BIN_DIR):
 	@echo "Creating bin directory..."
 	@mkdir -p "bin"
 
-.PHONY: all clean
-
+.PHONY: clean
 clean:
 	@echo "Cleaning up object files..."
 	@rm -rf "$(OBJ_DIR)/*.o"
