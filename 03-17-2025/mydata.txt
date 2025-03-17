@@ -1,0 +1,7 @@
+banana      70.00
+grapes      240.00
+pork        320.00
+chicken     240.00
+apple       25.00
+suka        10.45
+paminta     5.00

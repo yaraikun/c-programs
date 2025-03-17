@@ -1,17 +1,17 @@
-SRC = prog1.c
+SRC = prog9.c
 
 CC = gcc
 CFLAGS = -Wall -Wextra
 BIN = a.exe
 OUT = OUTPUT.txt
 
-all: compile
+all: compile run
 
 compile:
 	$(CC) $(CFLAGS) -o $(BIN) $(SRC)
 
 run:
-	"./$(BIN)"
+	./$(BIN)
 
 clean:
 	del $(BIN) $(OUT)

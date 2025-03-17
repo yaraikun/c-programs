@@ -11,6 +11,8 @@ int main()
     fscanf(fp, "%d", &x); // read an value from the text file
                           // stored that value as an int into var x
 
+    printf("x is %d\n", x);
+
     fclose(fp);
 
     return 0;
